@@ -7,78 +7,61 @@ public class Homework1 {
         System.out.print("исходный массив: ");
         printArray(array);
         System.out.println();
+        // запуск в цикле поиска максимального числа в массиве методом просеивания
         for (int i = array.length-1; i >=0 ; i--) {
             sifting(array, i);
-//            printArray(array);
-//            System.out.println();
         }
-        System.out.println();
+
         System.out.print("отсортированный массив: ");
         printArray(array);
     }
 
-    public static int[] sifting(int[] array, int len) {
+    // метод просеивания
+    public static void sifting(int[] array, int len) {
         int start = (len+1 )/ 2 - 1;
 
         for (int i = start; i >= 0; i--) {
-            //System.out.printf(" start  : %d",start);
+
             int parent = array[i];
-//            System.out.printf(" parent  : %d",parent);
-//            System.out.println();
             int leftChild = array[2 * i + 1];
+            // проверка длины массива и наличия правого Child
             if (len+1 == (2 * i + 2)) {
-//                System.out.printf(" leftChild  : %d",leftChild);
-//                System.out.println();
+                // если Child болеше  Parent, то меняем  элементы местами
                 if (leftChild > parent) {
                     int temp = array[2 * i + 1];
                     array[2 * i + 1] = array[i];
                     array[i] = temp;
-//                    System.out.printf(" newparent  : %d",temp);
-//                    System.out.println();
-//                    printArray(array);
-//                    System.out.println();
-
                 }
+            // если правый  Child есть:
             }else {
 
                 int rightChild = array[2 * i + 2];
-
-//                System.out.printf(" leftChild  : %d",leftChild);
-//                System.out.println();
-//                System.out.printf(" rightChild  : %d",rightChild);
-//                System.out.println();
+                // если Parent меньше левого Child, то меняем  элементы местами
                 if ((leftChild >= rightChild) && (leftChild > parent)) {
                     int temp = array[2 * i + 1];
                     array[2 * i + 1] = array[i];
                     array[i] = temp;
-//                    System.out.printf(" new parent : %d", array[i]);
-//                    System.out.println();
-//                    printArray(array);
-//                    System.out.println();
                 }
-
+                // если Parent меньше правого Child, то меняем  элементы местами
                 if ((leftChild <= rightChild) && (rightChild > parent)) {
                     int temp = array[i];
                     array[i] = array[2 * i + 2];
                     array[2 * i + 2] = temp;
-//                    System.out.printf(" new parent : %d", array[i]);
-//                    System.out.println();
                 }
             }
         }
+        // меняем местами максимальный (первый элемент) с последним
         int temp = array[0];
         array[0] = array[len];
         array[len] = temp;
-        //printArray(array);
-        return array;
 
     }
+
+    // метод вывода массива в консоль
     public  static void printArray(int[] array){
-        for (int i = 0; i < array.length; i++) {
-            System.out.printf("%d ,",array[i]);
+
+        for (int j : array) {
+            System.out.printf("%d ,", j);
         }
     }
-
-
-
 }
