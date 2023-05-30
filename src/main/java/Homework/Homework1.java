@@ -6,7 +6,8 @@ public class Homework1 {
         int[] array = new int[]{16, 18, 18, 4, 10, 3, 21 };
         System.out.print("исходный массив: ");
         printArray(array);
-        System.out.println();
+        System.out.println();System.out.println();
+
         // запуск в цикле поиска максимального числа в массиве методом просеивания
         for (int i = array.length-1; i >=0 ; i--) {
             sifting(array, i);
