@@ -13,13 +13,14 @@ public class Homework3 {
             private Node rightChild;
         }
 
+        // метод swap для замены 2х красных цветов
         private void swap(Node node) {
             node.leftChild.red = false;
             node.rightChild.red = false;
             node.red = true;
         }
 
-
+        // метод малого левого поворота
         private Node leftTurn(Node node) {
 //              node(5)                                   node(5)
 //              /     \                                      /  \
@@ -43,6 +44,7 @@ public class Homework3 {
             return leftNode;
         }
 
+        // метод правого малого поворота
         private Node rightTurn(Node node) {
             Node righNode = node.rightChild;
             Node temp = righNode.leftChild;
@@ -53,6 +55,7 @@ public class Homework3 {
             return righNode;
         }
 
+        // метод ребалансировки
         private Node rebalance(Node node) {
             Node result = node;
             boolean balance;
@@ -76,6 +79,7 @@ public class Homework3 {
             return result;
         }
 
+        // метод добавления элемента в бинарное дерево
         public boolean addNode(int value) {
             Node currentNode = start;
             while (currentNode != null) {
@@ -109,6 +113,7 @@ public class Homework3 {
             return false;
         }
 
+        // метод проверки и создания корневого элемента дерева
         public boolean addRoot(int value) {
             if (start != null) {
                 boolean result = addNode(value);
@@ -120,6 +125,21 @@ public class Homework3 {
                 start.red = false;
             }
             return true;
+        }
+
+        // метод поиска элемента в бинарном дереве
+        public boolean find(int value){
+            Node currentNode = start;
+            while (currentNode != null){
+                if(currentNode.value == value)return true;
+                else if(value > currentNode.value){
+                    currentNode = currentNode.rightChild;
+                }
+                else{
+                    currentNode = currentNode.leftChild;
+                }
+            }
+            return false;
         }
     }
 }
