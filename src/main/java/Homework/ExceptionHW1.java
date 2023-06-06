@@ -30,8 +30,8 @@ public class ExceptionHW1 {
 //        System.out.println(sum2d(ints));
 
         //задание 3
-        int[] a = new int[]{3,15,19,7,0};
-        int[] b = new int[]{1,5,7};
+        int[] a = new int[]{3,15,19};
+        int[] b = new int[]{1,5,0};
         //System.out.println(Arrays.toString(difference(a,b)));
 
         //задание 4
@@ -116,6 +116,9 @@ public class ExceptionHW1 {
         } else{
             float[] quotient_list = new float[a.length];
             for (int i = 0; i < a.length; i++) {
+                if(b[i]==0){
+                    throw new RuntimeException("На ноль делить нельзя!");
+                }
                 quotient_list[i] = a[i]/b[i];
             }
             return quotient_list;
