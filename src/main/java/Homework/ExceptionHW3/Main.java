@@ -7,6 +7,15 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
+// Данные для проверки:
+// Николай Петров Васильевич
+// Кузьма Петров Водкин Сергеевич 1995.03.29 +7345567987 m
+// Кузьма Петров-Водкин Сергеевич 1995.03.29 +7345567987 m
+// Кузьма Петров-Водкин Сергеевич 05.11.1878 нет m
+// Кузьма Петров-Водкин Сергеевич 05.11.1878 70000000000 муж
+// Кузьма Петров-Водкин Сергеевич 05.11.1878 70000000000 m
+
+
 public class Main {
     public static void main(String[] args) throws MyFormatException {
         String data = enter();
@@ -15,18 +24,12 @@ public class Main {
             String surname = array[1];
             String birthDay = array[3];
             String phone = array[4];
-            System.out.println(phone);
             String sex = array[5];
             verificationDate(birthDay);
             verificationInt(phone);
             verificationChar(sex);
-//            System.out.println(data.toString());
-            if(existFile(surname+".txt")){
-                write(surname+".txt", array, true);
-
-            } else{
-                write(surname+".txt", array, false);
-            }
+            // eсли файл с таким именем существуем производим дозапись? иначе новый файл
+            write(surname+".txt", array, existFile(surname + ".txt"));
         }
     }
 
@@ -40,7 +43,7 @@ public class Main {
                 фамилия, имя, отчество - строки
                 дата рождения - строка формата dd.mm.yyyy
                 номер телефона - целое беззнаковое число без форматирования
-                пол - символ латиницей f или m""");
+                пол - символ латиницей f или m \n""");
         return enter.nextLine();
     }
 
@@ -56,58 +59,50 @@ public class Main {
         return true;
     }
 
-    public static Boolean verificationInt(String element) throws MyFormatException {
+    public static void verificationInt(String element) throws MyFormatException {
         try {
             Long.valueOf(element);
-            return true;
         } catch (Exception e) {
             String string = "Номер телефона";
             throw new MyFormatException(string);
         }
     }
 
-    private static Boolean verificationDate(String element) throws MyFormatException {
+    private static void verificationDate(String element) throws MyFormatException {
         try {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
             LocalDate date = LocalDate.parse(element, formatter);
-            return true;
         } catch (Exception e) {
             String string = "Дата рождения";
             throw new MyFormatException(string);
         }
     }
 
-    private static Boolean verificationChar(String element) throws MyFormatException {
-        if (element.equals("f") || element.equals("m")) {
-            return true;
-        } else {
+    private static void verificationChar(String element) throws MyFormatException {
+        if (!element.equals("f") && !element.equals("m")) {
             String string = "Пол";
             throw new MyFormatException(string);
         }
     }
 
-    public static void write(String path, String[] array, Boolean append) {
+    public static void write(String path, String[] array, Boolean append){
         File file = new File(path);
-        try {
-            FileWriter writer = new FileWriter(file, append);
-            for (int i = 0; i < array.length; i++) {
-                writer.write("<"+array[i]+">");
+        try (FileWriter writer = new FileWriter(file, append)){
+            for (String s : array) {
+                writer.write("<" + s + ">");
             }
             writer.write("\n");
             writer.flush();
+            System.out.println("Данные успешно сохранены!");
         } catch (IOException e) {
-            System.err.println("Ошибка файловой системы");
+            e.printStackTrace();
         }
     }
 
 
     public static Boolean existFile(String path){
         File file = new File(path);
-        if(file.isFile()){
-            return true;
-        }
-        return  false;
+        return file.isFile();
     }
-
 
 }
