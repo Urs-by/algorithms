@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0716aaf0-eb1c-4720-949b-e92180aefc62" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Homework/Homework1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lectures/Main.java" afterDir="false" />
+    <list default="true" id="0716aaf0-eb1c-4720-949b-e92180aefc62" name="Changes" comment="homework 3 implemented methods read and write to file">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Homework/ExceptionHW3/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Homework/ExceptionHW3/MyFormatException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Homework/ExceptionHW2/Task3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Homework/ExceptionHW2/Task3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,9 +47,9 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Homework1">
-    <configuration name="Homework1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Homework.Homework1" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="ExceptionHW1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Homework.ExceptionHW1" />
       <module name="algorithms" />
       <extension name="coverage">
         <pattern>
@@ -64,12 +61,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="lessson2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lectures.lessson2" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Homework.ExceptionHW3.Main" />
       <module name="algorithms" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lectures.*" />
+          <option name="PATTERN" value="Homework.ExceptionHW3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Task1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Homework.ExceptionHW2.Task1" />
+      <module name="algorithms" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Homework.ExceptionHW2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Task2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Homework.ExceptionHW2.Task2" />
+      <module name="algorithms" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Homework.ExceptionHW2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Task3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Homework.ExceptionHW2.Task3" />
+      <module name="algorithms" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Homework.ExceptionHW2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -79,8 +115,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Homework1" />
-        <item itemvalue="Application.lessson2" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Task3" />
+        <item itemvalue="Application.Task2" />
+        <item itemvalue="Application.Task1" />
+        <item itemvalue="Application.ExceptionHW1" />
       </list>
     </recent_temporary>
   </component>
@@ -93,6 +132,92 @@
       <option name="presentableId" value="Default" />
       <updated>1684820792261</updated>
     </task>
+    <task id="LOCAL-00001" summary="homework1 heapsort: created function screening method">
+      <created>1684957962183</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1684957962183</updated>
+    </task>
+    <task id="LOCAL-00002" summary="homework1 heapsort: task solved">
+      <created>1685001346856</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685001346857</updated>
+    </task>
+    <task id="LOCAL-00003" summary="homework1 heapsort: add comments">
+      <created>1685007174315</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685007174315</updated>
+    </task>
+    <task id="LOCAL-00004" summary="homework2 reverse Linkedlist solved">
+      <created>1685457509056</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685457509056</updated>
+    </task>
+    <task id="LOCAL-00005" summary="homework3 redBlackTree , add function: swap, left and right turn, rebalance, addNode &amp; addRoot">
+      <created>1685645959200</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685645959201</updated>
+    </task>
+    <task id="LOCAL-00006" summary="homework3 redBlackTree , add function find and comments">
+      <created>1685646399239</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685646399239</updated>
+    </task>
+    <task id="LOCAL-00007" summary="seminar 1 exception">
+      <created>1685694509459</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685694509460</updated>
+    </task>
+    <task id="LOCAL-00008" summary="homework 1 exception solved">
+      <created>1685986716798</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685986716798</updated>
+    </task>
+    <task id="LOCAL-00009" summary="homework 1 exception add exception by zero">
+      <created>1686036087492</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1686036087492</updated>
+    </task>
+    <task id="LOCAL-00010" summary="homework 2 exception solved">
+      <created>1686225976446</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1686225976446</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="homework1 heapsort: created function screening method" />
+    <MESSAGE value="homework1 heapsort: task solved" />
+    <MESSAGE value="homework1 heapsort: add comments" />
+    <MESSAGE value="homework2 reverse Linkedlist solved" />
+    <MESSAGE value="homework3 redBlackTree , add function: swap, left and right turn, rebalance, addNode &amp; addRoot" />
+    <MESSAGE value="homework3 redBlackTree , add function find and comments" />
+    <MESSAGE value="seminar 1 exception" />
+    <MESSAGE value="homework 1 exception solved" />
+    <MESSAGE value="homework 1 exception add exception by zero" />
+    <MESSAGE value="homework 2 exception solved" />
+    <MESSAGE value="homework 3 implemented methods for checking the validity of the entered data" />
+    <MESSAGE value="homework 3 implemented methods read and write to file" />
+    <option name="LAST_COMMIT_MESSAGE" value="homework 3 implemented methods read and write to file" />
   </component>
 </project>

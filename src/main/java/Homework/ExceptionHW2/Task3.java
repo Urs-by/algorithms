@@ -22,7 +22,8 @@ public class Task3 {
             inputString();
         } else {
             System.out.println("Пустые строки вводить нельзя!");
-            throw new RuntimeException("Вы вели пустую строку");
+            throw new RuntimeException("Вы вели пустую строку!");
+
         }
     }
 }
